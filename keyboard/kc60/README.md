@@ -12,6 +12,9 @@ You have access to a bunch of goodies! Check out the Makefile to enable/disable 
 
 ## WS2812 RGB LED Mod
 
+![WS2812 LED Mod](https://raw.github.com/yangliu/qmk_firmware/kc60/keyboard/kc60/ws2812-bottomlight.jpg)
+
+
 If you mod your KC60 by adding WS2812 LED strip for backlight, you can enable it by enabling it in Makefile
 
     RGBLIGHT_ENABLE = yes
@@ -31,6 +34,14 @@ The following options in config.h will also need to be changed according to your
     #ifndef RGBLIGHT_VAL_STEP
     #define RGBLIGHT_VAL_STEP 17
     #endif
+
+### WS2812 Wiring
+
+A few unused pins (PF4, PF5) of ATMega32U4 are populated on the PCB, so you can use any of them to connect to the DATA of WS2812, and then wiring the VCC and GND. An example wiring was shown in the following photo.
+
+![WS2812 Wiring](https://raw.github.com/yangliu/qmk_firmware/kc60/keyboard/kc60/ws2812-wiring.jpg)
+
+Please note the USB port can only supply a limited amount of power to the keyboard (500mA by standard, however, modern computer and most usb hubs can provide 700+mA.). According to the data of NeoPixel from Adafruit, 30 WS2812 LED requires a 5V 1A power supply, LED used in this mod should not more than 20.
 
 ## Quick aliases to common actions
 
