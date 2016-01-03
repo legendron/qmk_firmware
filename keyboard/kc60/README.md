@@ -14,6 +14,7 @@ You have access to a bunch of goodies! Check out the Makefile to enable/disable 
 
 ![WS2812 LED Mod](https://raw.github.com/yangliu/qmk_firmware/kc60/keyboard/kc60/ws2812-bottomlight.jpg)
 
+Here's a quick demo on Youtube(https://www.youtube.com/watch?v=VKrpPAHlisY).
 
 If you mod your KC60 by adding WS2812 LED strip for backlight, you can enable it by enabling it in Makefile
 
