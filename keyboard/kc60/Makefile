@@ -130,12 +130,6 @@ BACKLIGHT_ENABLE = yes  # Enable keyboard backlight functionality
 RGBLIGHT_ENABLE = yes # Enable WS2812 bottom RGB light
 
 
-ifdef RGBLIGHT_ENABLE
-	SRC += light_ws2812.c
-	SRC += rgblight.c
-	OPT_DEFS += -DRGBLIGHT_ENABLE
-endif
-
 # Optimize size but this may cause error "relocation truncated to fit"
 #EXTRALDFLAGS = -Wl,--relax
 
