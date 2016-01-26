@@ -108,6 +108,7 @@ enum function_id {
 
 const uint16_t PROGMEM fn_actions[] = {
   [0]  = ACTION_FUNCTION(SHIFT_ESC),
+#ifdef RGBLIGHT_ENABLE
   [1]  = ACTION_FUNCTION(RGBLED_TOGGLE),
   [2]  = ACTION_FUNCTION(RGBLED_STEP_MODE),
   [3]  = ACTION_FUNCTION(RGBLED_INCREASE_HUE),
@@ -116,6 +117,16 @@ const uint16_t PROGMEM fn_actions[] = {
   [6]  = ACTION_FUNCTION(RGBLED_DECREASE_SAT),
   [7]  = ACTION_FUNCTION(RGBLED_INCREASE_VAL),
   [8]  = ACTION_FUNCTION(RGBLED_DECREASE_VAL),
+#else
+  [1]  = ACTION_NO,
+  [2]  = ACTION_NO,
+  [3]  = ACTION_NO,
+  [4]  = ACTION_NO,
+  [5]  = ACTION_NO,
+  [6]  = ACTION_NO,
+  [7]  = ACTION_NO,
+  [8]  = ACTION_NO,
+#endif
   [9]  = ACTION_LAYER_ON(_MV, ON_PRESS),
   [10] = ACTION_LAYER_OFF(_MV, ON_PRESS),
   [11] = ACTION_LAYER_TAP_KEY(_FL, KC_ESC),
@@ -145,6 +156,7 @@ void action_function(keyrecord_t *record, uint8_t id, uint8_t opt) {
         }
       }
       break;
+#ifdef RGBLIGHT_ENABLE
     case RGBLED_TOGGLE:
       //led operations
       if (record->event.pressed) {
@@ -187,6 +199,7 @@ void action_function(keyrecord_t *record, uint8_t id, uint8_t opt) {
           rgblight_step();
         }
         break;
+#endif
   }
 }
 
