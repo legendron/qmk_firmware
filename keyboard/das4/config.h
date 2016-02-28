@@ -35,11 +35,11 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 // Planck PCB default pin-out
 // Change this to how you wired your keyboard
 // COLS: Left to right, ROWS: Top to bottom
-#define COLS (int []){ B4, D7, D6, D4, D5, C7, C6, D1, D0, B7, B3, E6, B2, B1, B0 }
-#define ROWS (int []){ F0, F1, F4, F5, F6, F7, B6, B5 }
+#define COLS (int []){ B0, E6, B7, D0, D1, C7, D5, D4, D6, D7, B4, B5, B6, F6, F4 }
+#define ROWS (int []){ B1, B2, B3, C6, F7, F5, F1, F0 }
 
 /* COL2ROW or ROW2COL */
-#define DIODE_DIRECTION COL2ROW
+#define DIODE_DIRECTION ROW2COL
 
 /* define if matrix has ghost */
 //#define MATRIX_HAS_GHOST
@@ -66,10 +66,10 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
 /* disable debug print */
-#define NO_DEBUG
+// #define NO_DEBUG
 
 /* disable print */
-#define NO_PRINT
+// #define NO_PRINT
 
 /* disable action features */
 //#define NO_ACTION_LAYER
