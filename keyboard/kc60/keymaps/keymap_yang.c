@@ -11,6 +11,7 @@
 #define _BM 1
 #define _FL 2
 #define _MV 3
+#define _PW 4
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   /* Keymap _BW: (Base Windows) Windows Default Layer
@@ -29,7 +30,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [_BW] = KEYMAP(
   KC_GRV,  KC_1,   KC_2,   KC_3,   KC_4,   KC_5,   KC_6,   KC_7,   KC_8,   KC_9,   KC_0,   KC_MINS,  KC_EQL,   KC_BSPC, \
   KC_TAB,  KC_Q,   KC_W,   KC_E,   KC_R,   KC_T,   KC_Y,   KC_U,   KC_I,   KC_O,   KC_P,   KC_LBRC,  KC_RBRC,  KC_BSLS, \
-  F(11),   KC_A,   KC_S,   KC_D,   KC_F,   KC_G,   KC_H,   KC_J,   KC_K,   KC_L,   KC_SCLN,KC_QUOT,            KC_ENT,  \
+  FUNC(11),   KC_A,   KC_S,   KC_D,   KC_F,   KC_G,   KC_H,   KC_J,   KC_K,   KC_L,   KC_SCLN,KC_QUOT,            KC_ENT,  \
   KC_LSFT,         KC_Z,   KC_X,   KC_C,   KC_V,   KC_B,   KC_N,   KC_M,   KC_COMM,KC_DOT, KC_SLSH,            KC_RSFT, \
   KC_LCTL, KC_LGUI,KC_LALT,          KC_SPC,                                       KC_RALT,KC_RGUI,  KC_RCTL,  F(9)),
   /* Keymap _BM: (Base Mac) Mac Default Layer
@@ -48,7 +49,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [_BM] = KEYMAP(
   KC_GRV,  KC_1,   KC_2,   KC_3,   KC_4,   KC_5,   KC_6,   KC_7,   KC_8,   KC_9,   KC_0,   KC_MINS,  KC_EQL,   KC_BSPC, \
   KC_TAB,  KC_Q,   KC_W,   KC_E,   KC_R,   KC_T,   KC_Y,   KC_U,   KC_I,   KC_O,   KC_P,   KC_LBRC,  KC_RBRC,  KC_BSLS, \
-  F(11),   KC_A,   KC_S,   KC_D,   KC_F,   KC_G,   KC_H,   KC_J,   KC_K,   KC_L,   KC_SCLN,KC_QUOT,            KC_ENT,  \
+  FUNC(11),   KC_A,   KC_S,   KC_D,   KC_F,   KC_G,   KC_H,   KC_J,   KC_K,   KC_L,   KC_SCLN,KC_QUOT,            KC_ENT,  \
   KC_LSFT,         KC_Z,   KC_X,   KC_C,   KC_V,   KC_B,   KC_N,   KC_M,   KC_COMM,KC_DOT, KC_SLSH,            KC_RSFT, \
   KC_LCTL, KC_LALT,KC_LGUI,          KC_SPC,                                       KC_RGUI,KC_RALT,  KC_RCTL,  F(9)),
   /* Keymap _FL: Function Layer
@@ -69,7 +70,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   KC_TRNS,KC_TRNS,KC_UP,  KC_TRNS,KC_CALC,KC_INS, KC_TRNS,KC_PGUP,KC_TRNS, KC_TRNS,   KC_PSCR,   KC_SLCK,   KC_PAUS,   KC_TRNS, \
   KC_TRNS,KC_LEFT,KC_DOWN,KC_RGHT,KC_TRNS,KC_HOME,KC_LEFT,KC_DOWN,KC_UP,   KC_RGHT,   KC_END,    KC_TRNS,              KC_TRNS, \
   KC_TRNS,        BL_DEC, BL_TOGG,BL_INC, M(0),   KC_TRNS,KC_PGDN,KC_TRNS, KC_VOLD,   KC_MUTE,   KC_VOLU,              KC_PGUP, \
-  KC_TRNS,KC_TRNS,KC_TRNS,          KC_TRNS,                               KC_APP,    KC_HOME,   KC_PGDN,              KC_END),
+  KC_TRNS,KC_TRNS,KC_TRNS,          F(12),                                 KC_APP,    KC_HOME,   KC_PGDN,              KC_END),
   /* Keymap 3: Fn1 Layer
    * ,-----------------------------------------------------------.
    * |   |   |   |   |   |   |   |   |   |   |   |   |   |       |
@@ -89,6 +90,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   KC_NO,  KC_LEFT,KC_DOWN,KC_RGHT,KC_NO,  KC_HOME,KC_LEFT,KC_DOWN,KC_UP,  KC_RGHT,KC_END, KC_NO,          KC_NO, \
   KC_NO,          F(1),   F(2),   F(3),   F(4),   F(5),   F(6),   F(7),   F(8),   KC_NO,  KC_NO,          KC_UP, \
   KC_NO,  KC_NO,  KC_NO,         KC_TRNS,                                         F(10),  KC_LEFT,KC_DOWN,KC_RGHT),
+
+[_PW] = KEYMAP(
+  KC_NO,  KC_NO,  KC_NO,  KC_NO,  KC_NO,  KC_NO,  KC_NO,  KC_NO,  KC_NO,  KC_NO,  KC_NO,  KC_NO,  KC_NO,  KC_NO, \
+  KC_NO,  KC_NO,  KC_NO,  KC_NO,  KC_NO,  KC_NO,  KC_NO,  KC_NO,  KC_NO,  KC_NO,  KC_NO,  KC_NO,  KC_NO,  KC_NO, \
+  KC_TRNS,KC_NO,  KC_NO,  KC_NO,  KC_NO,  KC_NO,  KC_NO,  KC_NO,  KC_NO,  KC_NO,  KC_NO,  KC_NO,          KC_NO, \
+  KC_NO,          KC_NO,  KC_NO,  KC_NO,  KC_NO,  KC_NO,  KC_NO,  KC_NO,  KC_NO,  KC_NO,  KC_NO,          KC_NO, \
+  KC_NO,  KC_NO,  KC_NO,         KC_NO,                                           KC_NO,  KC_NO,  KC_NO,  KC_NO),
 
 
 };
@@ -130,6 +138,7 @@ const uint16_t PROGMEM fn_actions[] = {
   [9]  = ACTION_LAYER_ON(_MV, ON_PRESS),
   [10] = ACTION_LAYER_OFF(_MV, ON_PRESS),
   [11] = ACTION_LAYER_TAP_KEY(_FL, KC_ESC),
+  [12] = ACTION_LAYER_TAP_KEY(_PW, KC_SPC),
 };
 
 #define MODS_CTRL_MASK  (MOD_BIT(KC_LSHIFT)|MOD_BIT(KC_RSHIFT))

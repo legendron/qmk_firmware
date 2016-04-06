@@ -10,7 +10,7 @@ void * matrix_scan_user(void) {
 	// leave these blank
 };
 
-void * matrix_init_kb(void) {
+void matrix_init_kb(void) {
 	// put your keyboard start-up code here
 	// runs once when the firmware starts up
 	#ifdef BACKLIGHT_ENABLE
@@ -28,7 +28,7 @@ void * matrix_init_kb(void) {
 	}
 };
 
-void * matrix_scan_kb(void) {
+void matrix_scan_kb(void) {
 	// put your looping keyboard code here
 	// runs every cycle (a lot)
 
