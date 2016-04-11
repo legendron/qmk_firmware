@@ -14,7 +14,7 @@ void matrix_init_kb(void) {
 	// put your keyboard start-up code here
 	// runs once when the firmware starts up
 	#ifdef BACKLIGHT_ENABLE
-    	pwm_led_init();
+    	// pwm_led_init();
 	#endif
 
 	#ifdef RGBLIGHT_ENABLE
