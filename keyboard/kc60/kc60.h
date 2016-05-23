@@ -5,6 +5,7 @@
 #include "keymap_common.h"
 #include "backlight.h"
 #include "rgblight.h"
+#include "action_layer.h"
 #include <stddef.h>
 
 // This a shortcut to help you visually see your layout.
